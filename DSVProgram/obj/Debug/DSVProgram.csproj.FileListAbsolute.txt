@@ -31,7 +31,6 @@ C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\bin\Debug\EntityFramework.SqlS
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\bin\Debug\System.Data.SQLite.xml
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.csproj.AssemblyReference.cache
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Auth.resources
-C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Maintain.resources
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.csproj.GenerateResource.cache
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.csproj.CoreCompileInputs.cache
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.csproj.CopyComplete
@@ -69,3 +68,4 @@ C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.c
 C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.exe
 C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.pdb
 C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Admin.resources
+C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Admin.resources

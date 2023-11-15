@@ -1,4 +1,4 @@
-﻿// Copyright (c) PEPE POPO, OISP-1-120
+﻿// Copyright AlexanderAL123, OISP-1-120. ALL RIGHTS RESERVED.
 
 using System;
 using System.Collections.Generic;

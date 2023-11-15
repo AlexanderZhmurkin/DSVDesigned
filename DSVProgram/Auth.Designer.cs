@@ -103,12 +103,12 @@
             // 
             this.labelInv.AutoSize = true;
             this.labelInv.Font = new System.Drawing.Font("Calibri", 10F);
-            this.labelInv.ForeColor = System.Drawing.Color.Red;
+            this.labelInv.ForeColor = System.Drawing.Color.Black;
             this.labelInv.Location = new System.Drawing.Point(15, 150);
             this.labelInv.Name = "labelInv";
-            this.labelInv.Size = new System.Drawing.Size(155, 17);
+            this.labelInv.Size = new System.Drawing.Size(93, 17);
             this.labelInv.TabIndex = 5;
-            this.labelInv.Text = "Invalid login and password";
+            this.labelInv.Text = "{STATUS AUTH}";
             this.labelInv.Visible = false;
             // 
             // Auth
