@@ -1,4 +1,4 @@
-﻿// Copyright (c) PEPE POPO, OISP-1-120
+﻿// Copyright AlexanderAL123 OISP-1-120. ALL RIGHTS RESERVED.
 
 using System;
 using System.Windows.Forms;
@@ -18,6 +18,7 @@ namespace DSVProgram
         private String STATLOC_Wait = "Ожидание";
         private String STATLOC_Error = "Ошибка";
         private String STATLOC_EmptyTable = "База данных пуста";
+        private String STATLOC_Select = "Выбрана ячейка";
 
         private String DATABASE_FileName = "DSVBD.db";
         private SQLiteConnection DATABASE_Connect;
@@ -73,9 +74,8 @@ namespace DSVProgram
 
                     if (DBTable.Rows.Count > 0)
                     {
-                        DIAGViewer.Rows.Clear();
-                        DIAGViewer.Update();
-                        DIAGViewer.DataSource = DBTable;
+                        DIAGViewerAUTH.Update();
+                        DIAGViewerAUTH.DataSource = DBTable;
                     }
                     else lbStatusText.Text = STATLOC_EmptyTable;
                 }
@@ -92,38 +92,76 @@ namespace DSVProgram
             }
         }
 
+        void INSERTING_BASE(string InTable)
+        {
+            if (DATABASE_Connect.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DATABASE_Cmd.CommandText = "INSERT INTO " + InTable + " ('Login', 'Password', 'Member') VALUES ('" + textBoxLogin.Text + "' , '" + textBox1.Text + "' , '" + textBox2.Text + "')";
+                    DATABASE_Cmd.ExecuteNonQuery();
+                    READING_BASED(InTable);
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                lbStatusText.Text = STATLOC_Disconnected;
+                return;
+            }
+        }
 
+        void DELETING_BASE(string InTable)
+        {
+            if (DATABASE_Connect.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DATABASE_Cmd.CommandText = "DELETE FROM " + InTable + " WHERE Login LIKE " + "'%" + textBox3.Text + "%'";
+                    DATABASE_Cmd.ExecuteNonQuery();
+                    DIAGViewerAUTH.Update();
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                lbStatusText.Text = STATLOC_Disconnected;
+                return;
+            }
+        }
 
-
-
-
-
-
-
-
-        private void btCreate_Click(object sender, EventArgs e)
+        private void btTabAuth_Click(object sender, EventArgs e)
         {
             READING_BASED("AuthUser");
         }
 
-        private void btConnect_Click(object sender, EventArgs e)
+        private void btTabTasks_Click(object sender, EventArgs e)
         {
-           // DBConnect();
+            READING_BASED("TaskUser");
         }
 
-        private void btReadAll_Click(object sender, EventArgs e)
+        private void DIAGViewerAUTH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           // DBRead();
+            lbStatusText.Text = STATLOC_Select;
+
         }
 
-        private void btAdd_Click(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
-            //DBAdd();
+            INSERTING_BASE("AuthUser");
         }
 
-        private void btClearTable_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            DIAGViewer.Rows.Clear();
+            DELETING_BASE("AuthUser");
         }
     }
 }

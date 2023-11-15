@@ -85,9 +85,21 @@ namespace DSVProgram
 
                         SuccessfullyAuth = true;
                         labelInv.Visible = false;
-                        if (UniqueTypeEmployee == "ADMIN") SUCCESS_ADMIN = true;
-                        else if (UniqueTypeEmployee == "EMPLOYEE") SUCCESS_EMPLOYEE = true;
-                        else if (UniqueTypeEmployee == "WAITER") SUCCESS_WAITER = true;
+
+                        //Enchanced
+                        switch (UniqueTypeEmployee)
+                        {
+                            case "ADMIN":
+                                SUCCESS_ADMIN = true;
+                                break;
+                            case "EMPLOYEE":
+                                SUCCESS_EMPLOYEE = true;
+                                break;
+                            case "WAITER":
+                                SUCCESS_WAITER = true;
+                                break;
+                        }
+
                         this.Close();
                         AuthCONNECTION.Close();
                     }
