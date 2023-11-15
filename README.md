@@ -1,4 +1,4 @@
-# DSV Designed - Демонстрационный экзамен
+# DSV Designed
 
 <p align="center"><img src="DSVSplash.png" width="1024"></p>
 
