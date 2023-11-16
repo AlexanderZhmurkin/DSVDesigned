@@ -69,3 +69,5 @@ C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.e
 C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.pdb
 C:\Users\Alexander\Desktop\DemExam\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Admin.resources
 C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Admin.resources
+C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Employee.resources
+C:\Users\Alexander\Desktop\DSVDesigned\DSVProgram\obj\Debug\DSVProgram.Waiter.resources

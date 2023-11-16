@@ -16,20 +16,23 @@ namespace DSVProgram
 {
     public partial class Auth : Form
     {
-        //Провера для Program.cs для запуска режимов программы
+        // Провера для Program.cs для запуска разных режимов программы
+        // SUCCESS_ADMIN - открывает форму для Администратора
+        // SUCCESS_EMPLOYEE - открывает форму для Работника/Шефповара
+        // SUCCESS_WAITER - открывает форму для Официанта
         public bool SuccessfullyAuth = false;
         public bool SUCCESS_ADMIN = false;
         public bool SUCCESS_EMPLOYEE = false;
         public bool SUCCESS_WAITER = false;
 
         //Первые попытки локализации, очень неправильно, но все же...
-        private String STATLOC_Auth = "Аутентификация";
-        private String STATLOC_FailedAuth = "Ошибка аутентификации";
-        private String STATLOC_WaitAuth = "Ожидание";
-        private String STATLOC_EmptyTable = "База данных пуста";
-        private String STATLOC_Invalid = "Неверный логин и пароль";
+        private String STATLOC_Auth = "Authentication";
+        private String STATLOC_FailedAuth = "Error authentication";
+        private String STATLOC_WaitAuth = "Wait";
+        private String STATLOC_EmptyTable = "Database is empty";
+        private String STATLOC_Invalid = "Incorrect login and password";
 
-        //По умолчанию режим программы: Админ
+        //По умолчанию режим программы: Неизвестный
         string UniqueTypeEmployee = "UNKDOWN";
 
         public Auth()
@@ -39,8 +42,8 @@ namespace DSVProgram
 
         private void Auth_Load(object sender, EventArgs e)
         {
-            textBoxLogin.Text = "admin";
-            textBoxPass.Text = "admin";
+            //textBoxLogin.Text = "admin";
+            //textBoxPass.Text = "admin";
             labelInv.Text = STATLOC_Auth;
             labelInv.Visible = false;
         }

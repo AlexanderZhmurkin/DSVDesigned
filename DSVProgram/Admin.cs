@@ -20,6 +20,8 @@ namespace DSVProgram
         private String STATLOC_EmptyTable = "База данных пуста";
         private String STATLOC_Select = "Выбрана ячейка";
 
+        string UniqueTypeEmployee = "UNKDOWN";
+
         private String DATABASE_FileName = "DSVBD.db";
         private SQLiteConnection DATABASE_Connect;
         private SQLiteCommand DATABASE_Cmd;
@@ -34,7 +36,14 @@ namespace DSVProgram
             DATABASE_Connect = new SQLiteConnection();
             DATABASE_Cmd = new SQLiteCommand();
             lbStatusText.Text = STATLOC_Wait;
+
+            ComboBox_NewMember.Items.Clear();
+            ComboBox_NewMember.Items.Add("Администратор");
+            ComboBox_NewMember.Items.Add("Работник/Повар");
+            ComboBox_NewMember.Items.Add("Официант");
+
             CONNECT_BASED();
+            READING_BASED("AuthUser");
         }
 
         void CONNECT_BASED()
@@ -94,11 +103,50 @@ namespace DSVProgram
 
         void INSERTING_BASE(string InTable)
         {
+            if (TextBox_NewLogin.Text != "" && TextBox_NewPass.Text != "")
+            {
+                if (DATABASE_Connect.State == ConnectionState.Open)
+                {
+                    switch (ComboBox_NewMember.SelectedIndex)
+                    {
+                        case 0:
+                            UniqueTypeEmployee = "ADMIN";
+                            break;
+                        case 1:
+                            UniqueTypeEmployee = "EMPLOYEE";
+                            break;
+                        case 2:
+                            UniqueTypeEmployee = "WAITER";
+                            break;
+                    }
+
+                    try
+                    {
+                        DATABASE_Cmd.CommandText = "INSERT INTO " + InTable + " ('Login', 'Password', 'Member') VALUES ('" + TextBox_NewLogin.Text + "' , '" + TextBox_NewPass.Text + "' , '" + UniqueTypeEmployee + "')";
+                        DATABASE_Cmd.ExecuteNonQuery();
+                        READING_BASED(InTable);
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                    lbStatusText.Text = STATLOC_Disconnected;
+                    return;
+                }
+            }
+        }
+
+        void DELETING_BASE(string InTable)
+        {
             if (DATABASE_Connect.State == ConnectionState.Open)
             {
                 try
                 {
-                    DATABASE_Cmd.CommandText = "INSERT INTO " + InTable + " ('Login', 'Password', 'Member') VALUES ('" + textBoxLogin.Text + "' , '" + textBox1.Text + "' , '" + textBox2.Text + "')";
+                    DATABASE_Cmd.CommandText = $"DELETE FROM {InTable} WHERE IDAuth LIKE '%{TextBox_DelAuth.Text}%'";
                     DATABASE_Cmd.ExecuteNonQuery();
                     READING_BASED(InTable);
                 }
@@ -115,43 +163,9 @@ namespace DSVProgram
             }
         }
 
-        void DELETING_BASE(string InTable)
-        {
-            if (DATABASE_Connect.State == ConnectionState.Open)
-            {
-                try
-                {
-                    DATABASE_Cmd.CommandText = "DELETE FROM " + InTable + " WHERE Login LIKE " + "'%" + textBox3.Text + "%'";
-                    DATABASE_Cmd.ExecuteNonQuery();
-                    DIAGViewerAUTH.Update();
-                }
-                catch (SQLiteException ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
-                lbStatusText.Text = STATLOC_Disconnected;
-                return;
-            }
-        }
-
-        private void btTabAuth_Click(object sender, EventArgs e)
-        {
-            READING_BASED("AuthUser");
-        }
-
-        private void btTabTasks_Click(object sender, EventArgs e)
-        {
-            READING_BASED("TaskUser");
-        }
-
         private void DIAGViewerAUTH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             lbStatusText.Text = STATLOC_Select;
-
         }
 
         private void btnSignin_Click(object sender, EventArgs e)
@@ -159,7 +173,7 @@ namespace DSVProgram
             INSERTING_BASE("AuthUser");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_Delete_Click(object sender, EventArgs e)
         {
             DELETING_BASE("AuthUser");
         }
