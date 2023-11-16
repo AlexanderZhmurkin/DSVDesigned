@@ -233,7 +233,6 @@
     <EmbeddedResource Include="Waiter.resx">
       <DependentUpon>Waiter.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DSVBD.db" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

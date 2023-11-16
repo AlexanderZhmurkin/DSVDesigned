@@ -93,12 +93,12 @@ namespace DSVProgram
                 }
                 catch (SQLiteException ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("SQL SYNTAX Error: " + ex.Message, Text);
                 }
             }
             else
             {
-                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                MessageBox.Show("Unknown database connection error", Text);
                 return;
             }
         }
@@ -109,20 +109,30 @@ namespace DSVProgram
             {
                 try
                 {
-                    //DATABASE_Cmd.CommandText = $"DELETE FROM {InTable} WHERE IDAuth LIKE '%{TextBox_DelAuth.Text}%'";
+                    DATABASE_Cmd.CommandText = $"DELETE FROM {InTable} WHERE NameOrder LIKE '%{TextBox_NewName.Text}%'";
                     DATABASE_Cmd.ExecuteNonQuery();
                     READING_BASED(InTable);
                 }
                 catch (SQLiteException ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("SQL SYNTAX Error: " + ex.Message, Text);
                 }
             }
             else
             {
-                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                MessageBox.Show("Unknown database connection error", Text);
                 return;
             }
+        }
+
+        private void Button_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Delete_Click(object sender, EventArgs e)
+        {
+            DELETING_BASE("TaskUser");
         }
     }
 }

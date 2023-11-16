@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DIAGViewerAUTH = new System.Windows.Forms.DataGridView();
             this.Label_Order = new System.Windows.Forms.Label();
             this.TextBox_NewName = new System.Windows.Forms.TextBox();
@@ -37,6 +37,7 @@
             this.Label_Heater = new System.Windows.Forms.Label();
             this.ComboBox_NewMember = new System.Windows.Forms.ComboBox();
             this.Label_Status = new System.Windows.Forms.Label();
+            this.Button_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DIAGViewerAUTH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,14 +45,14 @@
             // 
             this.DIAGViewerAUTH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DIAGViewerAUTH.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DIAGViewerAUTH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DIAGViewerAUTH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DIAGViewerAUTH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DIAGViewerAUTH.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.DIAGViewerAUTH.Location = new System.Drawing.Point(12, 12);
@@ -91,12 +92,13 @@
             // Button_Update
             // 
             this.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Update.Location = new System.Drawing.Point(1074, 188);
+            this.Button_Update.Location = new System.Drawing.Point(993, 188);
             this.Button_Update.Name = "Button_Update";
             this.Button_Update.Size = new System.Drawing.Size(75, 23);
             this.Button_Update.TabIndex = 31;
             this.Button_Update.Text = "Update";
             this.Button_Update.UseVisualStyleBackColor = true;
+            this.Button_Update.Click += new System.EventHandler(this.Button_Update_Click);
             // 
             // Label_Heater
             // 
@@ -127,11 +129,23 @@
             this.Label_Status.TabIndex = 35;
             this.Label_Status.Text = "Status Order:";
             // 
+            // Button_Delete
+            // 
+            this.Button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete.Location = new System.Drawing.Point(1074, 188);
+            this.Button_Delete.Name = "Button_Delete";
+            this.Button_Delete.Size = new System.Drawing.Size(75, 23);
+            this.Button_Delete.TabIndex = 37;
+            this.Button_Delete.Text = "Delete";
+            this.Button_Delete.UseVisualStyleBackColor = true;
+            this.Button_Delete.Click += new System.EventHandler(this.Button_Delete_Click);
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.Button_Delete);
             this.Controls.Add(this.ComboBox_NewMember);
             this.Controls.Add(this.Label_Status);
             this.Controls.Add(this.Label_Order);
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Label Label_Heater;
         private System.Windows.Forms.ComboBox ComboBox_NewMember;
         private System.Windows.Forms.Label Label_Status;
+        private System.Windows.Forms.Button Button_Delete;
     }
 }
