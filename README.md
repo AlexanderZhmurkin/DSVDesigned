@@ -10,6 +10,7 @@
 
 # Документы и чеклисты
 Таблицы: https://docs.google.com/document/d/19AF0PQf4_cwmNgvunaRlXIQyXbuxNjeR/edit?usp=drive_link&ouid=110682139826458075872&rtpof=true&sd=true
+
 Задачи: https://docs.google.com/document/d/13fipgSP89_fUqumWTEOe4oKsvNvvb8hJ/edit?usp=drive_link&ouid=110682139826458075872&rtpof=true&sd=true
 
 # Дополнительно
