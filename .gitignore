@@ -50,6 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+/obj
+
 DSVLibrary/obj/project.nuget.cache
 DSVLibrary/obj/project.assets.json
 DSVLibrary/obj/DSVLibrary.csproj.nuget.g.props
