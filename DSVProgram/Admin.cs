@@ -19,6 +19,7 @@ namespace DSVProgram
         private String STATLOC_Error = "Ошибка";
         private String STATLOC_EmptyTable = "База данных пуста";
         private String STATLOC_Select = "Выбрана ячейка";
+        private String STATLOC_TEST = "Тест";
 
         string UniqueTypeEmployee = "UNKDOWN";
 
