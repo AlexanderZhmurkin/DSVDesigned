@@ -14,5 +14,5 @@
 Задачи: https://docs.google.com/document/d/13fipgSP89_fUqumWTEOe4oKsvNvvb8hJ/edit?usp=drive_link&ouid=110682139826458075872&rtpof=true&sd=true
 
 # Дополнительно
-Публичный репозиторий DSV Enchanced и DSV Library. Пример приложения DSV включен только в выпуски.
-База данных DSVBD.db открывается с помощью любых программ которые открывают подобные бд (например: BDBrowserForSQLite), а также бд должна храниться в DSVDesigned/binaries/DSVBD.db
+Публичный репозиторий DSVEnchanced и DSVLibrary. Пример приложения DSV включен только в выпуски.
+База данных DSVBD.db открывается с помощью любых программ которые открывают подобные бд (например: DB Browser for SQLite), а также бд должна храниться в DSVDesigned/binaries/DSVBD.db
