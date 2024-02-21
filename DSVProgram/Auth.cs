@@ -26,14 +26,14 @@ namespace DSVProgram
         public bool SUCCESS_WAITER = false;
 
         //Первые попытки локализации, очень неправильно, но все же...
-        private String STATLOC_Auth = "Authentication";
-        private String STATLOC_FailedAuth = "Error authentication";
-        private String STATLOC_WaitAuth = "Wait";
-        private String STATLOC_EmptyTable = "Database is empty";
-        private String STATLOC_Invalid = "Incorrect login and password";
+        private String STATLOC_Auth = "Авторизация";
+        private String STATLOC_FailedAuth = "Ошибка авторизации";
+        private String STATLOC_WaitAuth = "Подождите...";
+        private String STATLOC_EmptyTable = "База данных пуста";
+        private String STATLOC_Invalid = "Неправильный логин или пароль";
 
         //По умолчанию режим программы: Неизвестный
-        string UniqueTypeEmployee = "UNKDOWN";
+        string UniqueTypeEmployee = "Пустой бланк";
 
         public Auth()
         {
@@ -42,8 +42,6 @@ namespace DSVProgram
 
         private void Auth_Load(object sender, EventArgs e)
         {
-            //textBoxLogin.Text = "admin";
-            //textBoxPass.Text = "admin";
             labelInv.Text = STATLOC_Auth;
             labelInv.Visible = false;
         }
