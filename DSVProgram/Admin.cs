@@ -15,7 +15,7 @@ namespace DSVProgram
         //Первые попытки локализации, очень неправильно, но все же...
         private String STATLOC_Connected = "Подключен";
         private String STATLOC_Disconnected = "Отключен";
-        private String STATLOC_Wait = "Ожидание";
+        private String STATLOC_Wait = "Подождите";
         private String STATLOC_Error = "Ошибка";
         private String STATLOC_EmptyTable = "База данных пуста";
         private String STATLOC_Select = "Выбрана ячейка";
