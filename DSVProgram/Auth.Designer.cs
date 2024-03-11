@@ -44,7 +44,7 @@
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Size = new System.Drawing.Size(75, 23);
             this.btnSignin.TabIndex = 2;
-            this.btnSignin.Text = "Sign In";
+            this.btnSignin.Text = "Войти";
             this.btnSignin.UseVisualStyleBackColor = true;
             this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
             // 
@@ -64,9 +64,9 @@
             this.labelLogin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelLogin.Location = new System.Drawing.Point(15, 70);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(39, 15);
+            this.labelLogin.Size = new System.Drawing.Size(44, 15);
             this.labelLogin.TabIndex = 1;
-            this.labelLogin.Text = "Login:";
+            this.labelLogin.Text = "Логин:";
             // 
             // textBoxPass
             // 
@@ -85,26 +85,26 @@
             this.labelPass.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPass.Location = new System.Drawing.Point(15, 113);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(64, 15);
+            this.labelPass.Size = new System.Drawing.Size(52, 15);
             this.labelPass.TabIndex = 3;
-            this.labelPass.Text = "Password:";
+            this.labelPass.Text = "Пароль:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 20F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 33);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Authorization";
+            this.label1.Text = "Авторизация";
             // 
             // labelInv
             // 
             this.labelInv.AutoSize = true;
             this.labelInv.Font = new System.Drawing.Font("Calibri", 10F);
             this.labelInv.ForeColor = System.Drawing.Color.Black;
-            this.labelInv.Location = new System.Drawing.Point(15, 150);
+            this.labelInv.Location = new System.Drawing.Point(15, 152);
             this.labelInv.Name = "labelInv";
             this.labelInv.Size = new System.Drawing.Size(93, 17);
             this.labelInv.TabIndex = 5;

@@ -32,6 +32,8 @@ namespace DSVProgram
         private String STATLOC_EmptyTable = "База данных пуста";
         private String STATLOC_Invalid = "Неправильный логин или пароль";
 
+        private int FIRED = 0;
+
         //По умолчанию режим программы: Неизвестный
         string UniqueTypeEmployee = "Пустой бланк";
 
@@ -63,13 +65,14 @@ namespace DSVProgram
                 DataTable AuthDATATABLE = new DataTable();
                 SQLiteConnection AuthCONNECTION = new SQLiteConnection("Data Source=DSVBD.db; Version=3;");
                 SQLiteCommand AuthCOMMAND = new SQLiteCommand(AuthCONNECTION);
-                string AuthQUERY = "SELECT * FROM AuthUser WHERE Login = @Login AND Password = @Password";
+                string AuthQUERY = "SELECT * FROM AuthUser WHERE Login = @Login AND Password = @Password AND Fired = @Fired";
 
                 AuthCONNECTION.Open();
 
                 AuthCOMMAND.CommandText = AuthQUERY;
                 AuthCOMMAND.Parameters.AddWithValue("@Login", textBoxLogin.Text);
                 AuthCOMMAND.Parameters.AddWithValue("@Password", textBoxPass.Text);
+                AuthCOMMAND.Parameters.AddWithValue("@Fired", FIRED);
                 AuthCOMMAND.ExecuteNonQuery();
 
                 SQLiteDataAdapter AuthADAPTER = new SQLiteDataAdapter(AuthCOMMAND);
@@ -82,6 +85,7 @@ namespace DSVProgram
                         while (AuthREADER.Read())
                         {
                             UniqueTypeEmployee = AuthREADER.GetString(3);
+                            FIRED = AuthREADER.GetInt32(5);
                         }
 
                         SuccessfullyAuth = true;

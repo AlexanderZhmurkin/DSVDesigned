@@ -86,7 +86,7 @@ namespace DSVProgram
             {
                 try
                 {
-                    DATABASE_Cmd.CommandText = $"INSERT INTO {InTable} ('NameOrder', 'StatusOrder', 'DataCreate') VALUES ('{TextBox_NewName.Text}' , 'Unready', '{DateTime.Now.ToString("MM/dd/yyyy h:mm tt")}')";
+                    DATABASE_Cmd.CommandText = $"INSERT INTO {InTable} ('NameOrder', 'StatusOrder', 'DataCreate', 'PaidOrder') VALUES ('{TextBox_NewName.Text}' , 'Готовиться', '{DateTime.Now.ToString("MM/dd/yyyy - h:mm")}', '0')";
                     DATABASE_Cmd.ExecuteNonQuery();
                     READING_BASED(InTable);
                 }
@@ -127,6 +127,11 @@ namespace DSVProgram
         private void Button_Add_Click(object sender, EventArgs e)
         {
             INSERTING_BASE("TaskUser");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            READING_BASED("TaskUser");
         }
     }
 }

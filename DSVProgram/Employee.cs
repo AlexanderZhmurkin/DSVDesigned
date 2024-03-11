@@ -109,7 +109,7 @@ namespace DSVProgram
             {
                 try
                 {
-                    DATABASE_Cmd.CommandText = $"DELETE FROM {InTable} WHERE NameOrder LIKE '%{TextBox_NewName.Text}%'";
+                    DATABASE_Cmd.CommandText = $"DELETE FROM {InTable} WHERE NameOrder LIKE '%{textBox1.Text}%'";
                     DATABASE_Cmd.ExecuteNonQuery();
                     READING_BASED(InTable);
                 }
@@ -133,6 +133,56 @@ namespace DSVProgram
         private void Button_Delete_Click(object sender, EventArgs e)
         {
             DELETING_BASE("TaskUser");
+        }
+
+        private void Button_Add_Click(object sender, EventArgs e)
+        {
+            string InTable = "TaskUser";
+
+            if (DATABASE_Connect.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DATABASE_Cmd.CommandText = $"UPDATE {InTable} SET StatusOrder = @NewValue WHERE IDOrder = '%{textBox1.Text}%'";
+                    DATABASE_Cmd.Parameters.AddWithValue("@NewValue", "Готов");
+                    DATABASE_Cmd.ExecuteNonQuery();
+                    READING_BASED(InTable);
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string InTable = "TaskUser";
+
+            if (DATABASE_Connect.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DATABASE_Cmd.CommandText = $"UPDATE {InTable} SET PaidOrder = @NewValue WHERE IDOrder = '%{textBox1.Text}%'";
+                    DATABASE_Cmd.Parameters.AddWithValue("@NewValue", 1);
+                    DATABASE_Cmd.ExecuteNonQuery();
+                    READING_BASED(InTable);
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                return;
+            }
         }
     }
 }

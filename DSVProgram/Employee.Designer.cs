@@ -28,136 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обновитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.label2 = new System.Windows.Forms.Label();
             this.DIAGViewerAUTH = new System.Windows.Forms.DataGridView();
-            this.Label_Order = new System.Windows.Forms.Label();
-            this.TextBox_NewName = new System.Windows.Forms.TextBox();
-            this.Label_Bottom = new System.Windows.Forms.Label();
-            this.Button_Update = new System.Windows.Forms.Button();
-            this.Label_Heater = new System.Windows.Forms.Label();
-            this.ComboBox_NewMember = new System.Windows.Forms.ComboBox();
-            this.Label_Status = new System.Windows.Forms.Label();
-            this.Button_Delete = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Label_NewOrder = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Button_Add = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DIAGViewerAUTH)).BeginInit();
             this.SuspendLayout();
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1264, 25);
+            this.toolStrip1.TabIndex = 40;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выходToolStripMenuItem,
+            this.обновитьТаблицуToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(49, 22);
+            this.toolStripDropDownButton1.Text = "Файл";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
+            // обновитьТаблицуToolStripMenuItem
+            // 
+            this.обновитьТаблицуToolStripMenuItem.Name = "обновитьТаблицуToolStripMenuItem";
+            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.обновитьТаблицуToolStripMenuItem.Text = "Обновить таблицу";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
+            this.statusStrip1.TabIndex = 39;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(7, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 29);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Список заказов";
             // 
             // DIAGViewerAUTH
             // 
             this.DIAGViewerAUTH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DIAGViewerAUTH.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DIAGViewerAUTH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DIAGViewerAUTH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DIAGViewerAUTH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DIAGViewerAUTH.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.DIAGViewerAUTH.Location = new System.Drawing.Point(12, 12);
+            this.DIAGViewerAUTH.Location = new System.Drawing.Point(12, 75);
             this.DIAGViewerAUTH.Name = "DIAGViewerAUTH";
-            this.DIAGViewerAUTH.Size = new System.Drawing.Size(809, 657);
-            this.DIAGViewerAUTH.TabIndex = 3;
+            this.DIAGViewerAUTH.Size = new System.Drawing.Size(750, 570);
+            this.DIAGViewerAUTH.TabIndex = 41;
             // 
-            // Label_Order
+            // label4
             // 
-            this.Label_Order.AutoSize = true;
-            this.Label_Order.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_Order.Location = new System.Drawing.Point(842, 98);
-            this.Label_Order.Name = "Label_Order";
-            this.Label_Order.Size = new System.Drawing.Size(42, 15);
-            this.Label_Order.TabIndex = 34;
-            this.Label_Order.Text = "Order:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(797, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(304, 19);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Повар может только менять статус заказов";
             // 
-            // TextBox_NewName
+            // label1
             // 
-            this.TextBox_NewName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_NewName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBox_NewName.Location = new System.Drawing.Point(938, 96);
-            this.TextBox_NewName.Name = "TextBox_NewName";
-            this.TextBox_NewName.Size = new System.Drawing.Size(211, 23);
-            this.TextBox_NewName.TabIndex = 33;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(797, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 23);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Контролировать заказы";
             // 
-            // Label_Bottom
+            // Label_NewOrder
             // 
-            this.Label_Bottom.AutoSize = true;
-            this.Label_Bottom.Font = new System.Drawing.Font("Calibri", 15F);
-            this.Label_Bottom.Location = new System.Drawing.Point(841, 58);
-            this.Label_Bottom.Name = "Label_Bottom";
-            this.Label_Bottom.Size = new System.Drawing.Size(247, 24);
-            this.Label_Bottom.TabIndex = 32;
-            this.Label_Bottom.Text = "Switch status order for tasks";
+            this.Label_NewOrder.AutoSize = true;
+            this.Label_NewOrder.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Label_NewOrder.Location = new System.Drawing.Point(798, 118);
+            this.Label_NewOrder.Name = "Label_NewOrder";
+            this.Label_NewOrder.Size = new System.Drawing.Size(64, 15);
+            this.Label_NewOrder.TabIndex = 45;
+            this.Label_NewOrder.Text = "ID Заказа:";
             // 
-            // Button_Update
+            // textBox1
             // 
-            this.Button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Update.Location = new System.Drawing.Point(993, 188);
-            this.Button_Update.Name = "Button_Update";
-            this.Button_Update.Size = new System.Drawing.Size(75, 23);
-            this.Button_Update.TabIndex = 31;
-            this.Button_Update.Text = "Update";
-            this.Button_Update.UseVisualStyleBackColor = true;
-            this.Button_Update.Click += new System.EventHandler(this.Button_Update_Click);
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(894, 116);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 23);
+            this.textBox1.TabIndex = 44;
             // 
-            // Label_Heater
+            // Button_Add
             // 
-            this.Label_Heater.AutoSize = true;
-            this.Label_Heater.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_Heater.Location = new System.Drawing.Point(839, 17);
-            this.Label_Heater.Name = "Label_Heater";
-            this.Label_Heater.Size = new System.Drawing.Size(162, 33);
-            this.Label_Heater.TabIndex = 30;
-            this.Label_Heater.Text = "Control tasks";
+            this.Button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Add.Location = new System.Drawing.Point(801, 158);
+            this.Button_Add.Name = "Button_Add";
+            this.Button_Add.Size = new System.Drawing.Size(111, 50);
+            this.Button_Add.TabIndex = 43;
+            this.Button_Add.Text = "Приготовлен";
+            this.Button_Add.UseVisualStyleBackColor = true;
+            this.Button_Add.Click += new System.EventHandler(this.Button_Add_Click);
             // 
-            // ComboBox_NewMember
+            // button1
             // 
-            this.ComboBox_NewMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.ComboBox_NewMember.FormattingEnabled = true;
-            this.ComboBox_NewMember.Location = new System.Drawing.Point(938, 141);
-            this.ComboBox_NewMember.Name = "ComboBox_NewMember";
-            this.ComboBox_NewMember.Size = new System.Drawing.Size(211, 24);
-            this.ComboBox_NewMember.TabIndex = 36;
-            // 
-            // Label_Status
-            // 
-            this.Label_Status.AutoSize = true;
-            this.Label_Status.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_Status.Location = new System.Drawing.Point(842, 143);
-            this.Label_Status.Name = "Label_Status";
-            this.Label_Status.Size = new System.Drawing.Size(79, 15);
-            this.Label_Status.TabIndex = 35;
-            this.Label_Status.Text = "Status Order:";
-            // 
-            // Button_Delete
-            // 
-            this.Button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Delete.Location = new System.Drawing.Point(1074, 188);
-            this.Button_Delete.Name = "Button_Delete";
-            this.Button_Delete.Size = new System.Drawing.Size(75, 23);
-            this.Button_Delete.TabIndex = 37;
-            this.Button_Delete.Text = "Delete";
-            this.Button_Delete.UseVisualStyleBackColor = true;
-            this.Button_Delete.Click += new System.EventHandler(this.Button_Delete_Click);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(933, 158);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 50);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Оплачен";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.Button_Delete);
-            this.Controls.Add(this.ComboBox_NewMember);
-            this.Controls.Add(this.Label_Status);
-            this.Controls.Add(this.Label_Order);
-            this.Controls.Add(this.TextBox_NewName);
-            this.Controls.Add(this.Label_Bottom);
-            this.Controls.Add(this.Button_Update);
-            this.Controls.Add(this.Label_Heater);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Label_NewOrder);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Button_Add);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DIAGViewerAUTH);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Name = "Employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Employee Console";
+            this.Text = "Повар";
             this.Load += new System.EventHandler(this.Employee_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DIAGViewerAUTH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,15 +207,18 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem обновитьТаблицуToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DIAGViewerAUTH;
-        private System.Windows.Forms.Label Label_Order;
-        private System.Windows.Forms.TextBox TextBox_NewName;
-        private System.Windows.Forms.Label Label_Bottom;
-        private System.Windows.Forms.Button Button_Update;
-        private System.Windows.Forms.Label Label_Heater;
-        private System.Windows.Forms.ComboBox ComboBox_NewMember;
-        private System.Windows.Forms.Label Label_Status;
-        private System.Windows.Forms.Button Button_Delete;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Label_NewOrder;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Button_Add;
+        private System.Windows.Forms.Button button1;
     }
 }

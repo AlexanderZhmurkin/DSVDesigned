@@ -123,7 +123,7 @@ namespace DSVProgram
 
                     try
                     {
-                        DATABASE_Cmd.CommandText = "INSERT INTO " + InTable + " ('Login', 'Password', 'Member') VALUES ('" + TextBox_NewLogin.Text + "' , '" + TextBox_NewPass.Text + "' , '" + UniqueTypeEmployee + "')";
+                        DATABASE_Cmd.CommandText = "INSERT INTO " + InTable + " ('Login', 'Password', 'Member', 'Name', 'Fired', 'Worked') VALUES ('" + TextBox_NewLogin.Text + "' , '" + TextBox_NewPass.Text + "' , '" + UniqueTypeEmployee + "', '" + TextBox_NewName.Text + "', '" + 1 + "', '" + 0 + "')";
                         DATABASE_Cmd.ExecuteNonQuery();
                         READING_BASED(InTable);
                     }
@@ -164,6 +164,30 @@ namespace DSVProgram
             }
         }
 
+        void UPDATING_BASE(string InTable)
+        {
+            if (DATABASE_Connect.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DATABASE_Cmd.CommandText = $"UPDATE {InTable} SET Fired = @NewValue WHERE '%{TextBox_DelAuth.Text}%'";
+                    DATABASE_Cmd.Parameters.AddWithValue("@NewValue", 1);
+                    DATABASE_Cmd.ExecuteNonQuery();
+                    READING_BASED(InTable);
+                }
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неизвестная ошибка соединения с базой данных.", Text);
+                lbStatusText.Text = STATLOC_Disconnected;
+                return;
+            }
+        }
+
         private void DIAGViewerAUTH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             lbStatusText.Text = STATLOC_Select;
@@ -176,7 +200,29 @@ namespace DSVProgram
 
         private void Button_Delete_Click(object sender, EventArgs e)
         {
-            DELETING_BASE("AuthUser");
+            UPDATING_BASE("AuthUser");
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void добавитьЗаказыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Waiter ADVWaiter = new Waiter();
+            ADVWaiter.Show();
+        }
+
+        private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            READING_BASED("AuthUser");
+        }
+
+        private void показатьЗаказыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Employee ADVEmployee = new Employee();
+            ADVEmployee.Show();
         }
     }
 }
